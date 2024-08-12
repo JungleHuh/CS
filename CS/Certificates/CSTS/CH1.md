@@ -166,6 +166,9 @@
 - 테스트 실행 시 사용될 수 있는 다양한 테스트 도구도 테스트 환경으로 간주
 - 시스템이 동자하는 실제 환경과 최대한 유사한 환경에서 테스트 수행
 
+출처: https://snnchallenge.tistory.com/354
+목적: 공부하기 위해서 위 블로그의 내용을 똑같이 타이핑했습니다.
+
 ![image](https://github.com/user-attachments/assets/ffcaee2f-3741-460b-8aed-cde1d517b90d)
 
   
