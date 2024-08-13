@@ -58,7 +58,7 @@
 - XP는 페어 프로그래밍을 통해 개발자 간의 지식 전달 및 공유를 꾀함
 
 # TDD
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/0e735ef1-21c0-45c2-92d8-815b299a8bfd)
 - 테스트 케이스 작성을 가장 먼저 함
 - 테스트를 통과하는 코드 작성 -> 필요시 TDD 수행 중 리팩토링 수행
 - 리팩토링: 기능을 변경하지 않고 코드 내부 구조를 개선하는 작업
