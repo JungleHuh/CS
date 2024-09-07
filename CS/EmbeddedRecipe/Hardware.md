@@ -52,5 +52,26 @@
 - 따라서 단락된 부분에서 거의 모든 에너지를 소모하게 되어, Vout = Vac + Vdc = Vdc로, DC 성분이 거의 그대로 나오게 됨.
 - AC 성분 입장에서 보면 캐패시터는 없는 것이나 마찬가지라서 회로가 그냥 연결(Short)된 것처럼 느껴질 것. 따라서 저항 부분에서 거의 모든 에너지를 소모해 Vout = Vac + Vdc = 0으로 AC 성분은 거의 없어진다.
 
+### 5. 트랜지스터
+- 트랜지스터 Trans + Resistor(저항) -> 저항값이 변화하는 소자로 전류량 조절 가는ㅇ
+- 구조에 따라  BJT(Bipolar Junction Transistor)와 FET(Field Effect Transistor)로 나뉨
+- 일반회로에서는 High Input Impedence 때문에 Switching 성능이 우세한 FET을 더 많이 씀
+- 트랜지스터는 NPN형과 PNP형 2가지로 나뉨, 지금은 NPN을 위주로 설명
+- ![image](https://github.com/user-attachments/assets/398d28ed-1502-4856-aced-9d563435a05c)
+- 트랜지스터는 Base, Collector, Emitter로 나뉨
+- ![image](https://github.com/user-attachments/assets/bbfdad35-779c-48a2-b858-f7cbdfdcd462)
 
+- Base에 트랜지스터를 동작시킬 만큼의 전압이 가해지면 스위치가 눌리듯 Collector와 Emitter 사이에 회로가 연결되어 Collector에서부터 Emitter로 전류가 흐름
+- 이 때 Base를 얼마나 세게 누르냐(얼마나 큰 전압을 가하느냐)에 따라서 Collector와 Emitter 사이에 흐르는 전류의 세기가 변함
+- 인가하는 전압의 크기에 따라 활성 영역, 차단영역, 포화 영역으로 나뉨
+- 활성영역은 인가하는 전압 크기의 작은 변화량에 맞춰 전류도 함께 들쭉날쭉 변화하는 영역을 말한다.
+  차단영역은 인가하는 전압 크기가 너무 작아 전류가 흐르지 못하는 영역을 말한다.
+  포화영역은 인가하는 전압 크기가 너무 커서 전류 세기가 더 커지지 못하는 영역을 말한다.
+- ![image](https://github.com/user-attachments/assets/50531bb6-aa3b-4492-88db-3f615f25417e)
+- 트랜지스터의 전압 특성을 이용하면 증폭(amplifier)기능과 스위칭(switching)기능으로 활용가능
+- 증폭기능:  활성영역을 사용하며 B에 인가하는 아주 작은 양의 전압 변화량에 맞춰 C와 E 사이에 흐르는 전류가 큰 폭으로 들쭉날쭉 변화하는 현상을 이용해 구현
+- 스위칭기능: 차단영역을 0, 포화영역을 1이라고 정의하면 회로의 On/Off를 정의
+
+  
 출처: https://velog.io/@embeddedjune/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C-%EB%A0%88%EC%8B%9C%ED%94%BC-%EC%9A%94%EC%95%BD-%EB%B0%8F-%EC%A0%95%EB%A6%AC-Chapter-1-1.-HW-%ED%9A%8C%EB%A1%9C%EC%9D%B4%EB%A1%A0
+출처: https://blog.naver.com/lagrange0115/220697224724
