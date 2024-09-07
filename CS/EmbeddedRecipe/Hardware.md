@@ -39,3 +39,5 @@
 - 인덕터는 낮은 주파수를 가진 전류일수록 저항을 못 느낌
 - 인덕터는 전류의 변화량에 반비례 (V = L di/dt)하므로 저주파 전류만 통과할 수 있음
 - 따라서 회로에 고주파 흡수용으로 인덕터가 사용되는데, 이것은 Bead라고 부른다
+
+출처: https://velog.io/@embeddedjune/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C-%EB%A0%88%EC%8B%9C%ED%94%BC-%EC%9A%94%EC%95%BD-%EB%B0%8F-%EC%A0%95%EB%A6%AC-Chapter-1-1.-HW-%ED%9A%8C%EB%A1%9C%EC%9D%B4%EB%A1%A0
