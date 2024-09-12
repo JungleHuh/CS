@@ -79,6 +79,17 @@
 - 이런 디폴트 상태에서 좀 더 Reliable한 값을 보장해주기 위해 트랜지스터를 활용한 Pull up & Pull down 회로가 생겨남
 
 - ![image](https://github.com/user-attachments/assets/e99e69d2-c909-419b-868a-6a53f8aec87a)
+- 왼쪽 그림은 트랜지스터가 동작하지 않을 때 항상 High값을 인지합니다. 그리고 트랜지스터가 동작하면 전류는 저항이 낮은 쪽으로 흐르는 성질을 따라 Chip보다는 Ground쪽으로 이동(저항이 낮기 때문)
+- 그러면 Chip에는 전압이 인가되지 않아 Low값을 인지하게 되고, 이 때 동작이 시작됨
+- 이런 스위치(트랜지스터)가 Chip 내부에 들어가 있는 경우를 Open Collector라 부름
+- Collector가 외부로 나와 있으며 여러개의 Master가 하나의Slave에 연결될 때 유용하게 사용한다(무슨 말인지 모르곘음)
+- GPT왈: Collector: 데이터를 수집하는 역할을 담당하는 장치나 소프트웨어를 의미합니다. 예를 들어, 여러 장치나 시스템으로부터 데이터를 모으는 역할을 합니다.
+- - Master-Slave 구조란
+- Master: 주로 명령을 내리거나 데이터를 제어하는 역할을 하는 주체입니다.
+- Slave: Master의 지시를 받아 데이터를 처리하거나 명령을 수행하는 하위 주체입니다.
+- 
+- ![image](https://github.com/user-attachments/assets/cc1e5bce-d6d6-458e-9aab-d99eff2f5ea0)
+ 
 
 
   
