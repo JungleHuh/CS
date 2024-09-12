@@ -72,6 +72,15 @@
 - 증폭기능:  활성영역을 사용하며 B에 인가하는 아주 작은 양의 전압 변화량에 맞춰 C와 E 사이에 흐르는 전류가 큰 폭으로 들쭉날쭉 변화하는 현상을 이용해 구현
 - 스위칭기능: 차단영역을 0, 포화영역을 1이라고 정의하면 회로의 On/Off를 정의
 
+### 6. Pull up, Pull down 그리고 Open Collector
+- Chip은 0이 안가됐을 때 동작할 수도 있고 1이 인가됐을 때 동작할 수도 있다. (설계자 마음)
+- 0이 인가됐을 때 동작 -> Low Active / 1이 인가됐을 때 동작 -> High Active
+- Low Active 상태에서는 항상 1을 유지하다가 동작할 때만 0인가 (High Active는 그 반대)
+- 이런 디폴트 상태에서 좀 더 Reliable한 값을 보장해주기 위해 트랜지스터를 활용한 Pull up & Pull down 회로가 생겨남
+
+- ![image](https://github.com/user-attachments/assets/e99e69d2-c909-419b-868a-6a53f8aec87a)
+
+
   
 출처: https://velog.io/@embeddedjune/%EC%9E%84%EB%B2%A0%EB%94%94%EB%93%9C-%EB%A0%88%EC%8B%9C%ED%94%BC-%EC%9A%94%EC%95%BD-%EB%B0%8F-%EC%A0%95%EB%A6%AC-Chapter-1-1.-HW-%ED%9A%8C%EB%A1%9C%EC%9D%B4%EB%A1%A0
 출처: https://blog.naver.com/lagrange0115/220697224724
