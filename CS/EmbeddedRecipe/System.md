@@ -179,43 +179,34 @@ void add() {
 | 0x1004 | STORE 0x2004     | Data register에 저장된 값(a + b)를 c에 저장                       |
 
 
+- 위의 세가지 명령어가 CPU 내부에서 수행되는 과정
+- 1. LOAD 0x2000
+     1. PC는 0x1000번지를 가리킨다
+     2. PC값이 'Address Register'에 저장된 뒤 해당 주소에 접근한다
+     3. 해당 주소에서 명령어를 읽어와 'Instruction Register'에 저장한다 (Fetch)
+     4. Decoder가 명령어를 해석함과 동시에 PC는 증가해 0x1002번지를 가리킨다 (Decode)
+     5. CU는 0x2000번지에 있는 데이터를 읽어오라고 제어신호를 발생시킴
+     6. 0x2000번지에 있는 전역변수 a의 값이 1이 'Data Register'에 저장됨(Execute)
+     7. 이 값은 ALU를 통해 연산할지도 모르니 ACC(Accumulator)에 임시저장함
+- 2. ADD 0x2002
+     1. Address Register에 저장된 PC가 가리키는 주소에서 명령어를 읽어와 Instruction Register에 저장
+     2. Decoder가 명령어를 해석함과 동시에 PC는 증가해 0x1004번지를 가리킨다
+     3. 0x2002번지의 데이터를 'Data Register'에 저장된 뒤 ACC값과 덧셈한 뒤 ACC에 저장함
+- 3. STORE 0x2004
+     1. Address Register에 저장된 PC가 가리키는 주소에서 명령어를 읽어와 Instruction Register에 저장
+     2. Decoder가 명령어를 해석함과 동시에 PC는 증가해 0x1006번지를 가리킨다
+     3. CU에 ACC값을 2004번지에 저장하라고 제어신호를 날려 결과값을 저장함.
 
+- 결국 CPU는 항상 Fetch -> Decode -> Execute를 반복하고 있다
+- 이 때 각 단계를 담당하는 소자가 다른 것을 알 수 있다. Fetch는 PC, address register, instrunction register이고, Decode는 decoder, Execute는 CU, data register, ALU, ACC가 사용된다
+![image](https://github.com/user-attachments/assets/83d9f0e0-973a-4eec-95ce-d4f44f8ef2b9)
 
+- 파이프라인은 각 단계를 중첩시켜 하나의 시간에 여러 단계를 수행하도록 하는 기법
+- 다시 말해 명령어를 하나하나씩 실행하는 게 아니라 병렬적으로 실행하는 것
+- 응답 시간에 대해선 single cycle과 다를 게 없지만 throughput에는 더 나은 성능을 냄
+- 파이프라인의 단계가 많아지면 성능이 좋아질 것이라 예상할 수 있지만, 정도를 지나치게 될 경우 되려 성능이 떨어진다.
+- (throughput이 낮아지고, branch prediction fail 때 패널티가 증가
+- PC값은 execute 단계의 2개 명령어 밑을 가리키는데, 이 개념이 나중에 디버깅 때 굉장히 유용하게 쓰이니 기억
 
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+##### 출처: https://wpaud16.tistory.com/entry/컴퓨터-구조-Pipelining-hazards-Structure-hazards-Data-hazard-Control-hazard-Critical-path-pipeline-파이프라인-구조적-해져드-데이터-해져드-컨트롤-해져드
+##### 출처: https://velog.io/@embeddedjune/임베디드-레시피-요약-및-정리-Chapter-1-2.-HW-컴퓨터구성
