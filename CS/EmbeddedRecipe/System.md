@@ -160,6 +160,23 @@ NOR 게이트 1의 출력이 1이고, NOR 게이트 2의 출력이 0이 되어, 
 
 - ARM Core CPU의 동작구조를 단순하게 표현하면 Fetch -> Decode -> Execute의 Cycle로 되어있음
 
+word a = 1;
+word b = 2;
+word c;
+
+void add() {
+  c = a + b;
+  return;
+}
+
+- 위와 같은 C 프로그램을 컴파일 한 뒤 어셈블리를 생성했다. 이 떄 CPU는 16비트 프로세서
+- 전역변수 a = 0x2000, b = 0x2002 c = 0x2004에 저장되었다고 가정하자
+
+|주소||어셈블리||
+|------|---------|------------------------------------------|
+|0x1000|LOAD 0x2000|a를 data register에 load|
+|0x1002|ADD 0x2002|Data register에 저장된 값(a)과 b를 더해 data register에 저장.|
+|0x1004|STORE 0x2004|Data register에 저장된 값(a + b)를 c에 저장. |
 
 
 
