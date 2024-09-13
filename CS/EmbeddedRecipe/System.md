@@ -100,6 +100,19 @@ NOR 게이트 1의 출력이 1이고, NOR 게이트 2의 출력이 0이 되어, 
 - XIP(Excute-in-place)는 메모리 상에서 직접 프로그램을 실행할 수 있는 기술을 의미하며, Byte/word 등의 크기를 Random Access가 가능해야 한다. 모든 RAM과 Nor Flash는 이를 충족
 
 
+### 5.2 RAM의 물리적 동작
+-![image](https://github.com/user-attachments/assets/40c397d6-7bb7-4e9f-a5d3-691b59b527c7)
+
+- RAM은 Address Pin(A0 ~ A7)과 Data Pin(D0 ~ D7) 그리고 Control Pin(RD, WR)으로 이루어졌다.
+- Data Pin은 8개니, 한번에 8-bit씩 읽을 수 있음.
+- Address Pin이 8개니까 0x00부터 0xFF까지를 나타낼 수 있고, 한 주소가 8-bit의 데이터를 가지고 있으니 이 메모리의 크기는 256-Byte다.
+- 이 RAM에 데이터를 쓰는 방법: 0xAB번지에 0x7C를 쓴다고 가정
+  1. WR Pin에 High 신호를 주고, RD Pin에 Low 신호를 준다
+  2. A[7:0] = 0xAB = 10101011, D[7:0] = 0x7C = 01111100 신호를 주면 된다.
+  3. 
+
+
+
 
 
 
