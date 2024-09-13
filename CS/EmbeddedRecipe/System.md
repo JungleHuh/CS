@@ -90,6 +90,15 @@ NOR 게이트 1의 출력이 1이고, NOR 게이트 2의 출력이 0이 되어, 
 - DRAM은 SRAM에 비해 회로가 단순하고 집적도가 높아 용량 뻥튀기가 가능함
 - 하지만 캐패시터에서 전하가 방전(누설)되며 PL172규격에 따라 일정시간마다 Refresh가 필요하고, Read할 때마다 PreCharge도 필요
 - 그렇게 하지 않으면 데이터가 사라진다는 단점이 있음
+- DDR SDRAM(Double Data Rate Synchronous DRAM)은 CPU 동작에 박자와 순서를 맞춰가며 CPU성능을 최대한으로 활용하는 DRAM
+- 특히 DDR은 Clock의 Rising Edgedhk Falling Edge 둘 다 사용해서 Data를 2배로 빨리 전송할 수 있는 메모리
+- PSRAM(Pseudo SRAM)은 SRAM + DRAM 같은 느낌으로, 구조적으로는 DRAM이지만 HW적으로 Refresh + Precharge 회로가 내장되어 있어, 따로 Charge Control을 할 필요없이 SRAM처럼 쓸 수 있는 RAM이다.
+- NOR FLASH는 셀이 병렬로 연결되어 있고, Address Line과 Data Line을 모두 갖고 있어 Byte 단위로 Random Access가능
+- NOR은 Read가 빠르지만 Write/Erase는 느리다
+- NAND Flash는 셀이 String(직렬)로 연결되어 있고, Address Line과 Data Linedl 없어 직적도가 높고 Page단위로만 Read/Write가 가능하다.
+- NAND는 Read는 느리지만, Write/Erase가 빠르다.
+- XIP(Excute-in-place)는 메모리 상에서 직접 프로그램을 실행할 수 있는 기술을 의미하며, Byte/word 등의 크기를 Random Access가 가능해야 한다. 모든 RAM과 Nor Flash는 이를 충족
+
 
 
 
