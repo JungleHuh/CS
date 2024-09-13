@@ -12,6 +12,17 @@
 - ARM이 처음 등장했던 시절에는 임베디드 시스템 시장을 장악하던 메모리가 16-bit data line 위주였기 때문
 - 물론 ARM mode로도 당시 유행하던 메모리를 사용할 수 있었지만, 하나의 instruction을 사용하기 위해 매번 2회 fetch하므로 성능면에서 굉장히 낭비였을 것이다. 따라서 thumb mode를 만든 것
 
+#### 2.2 ARM 동작 Modes
+- ![image](https://github.com/user-attachments/assets/5e5db890-bd80-45f0-b92f-373904ceec67)
+- ARM은 7가지 모드로 동작, 모드의 특성을 잘 이해하면 더 적합한 모드를 선택해 SW를 구성할 수 있음
+- ARM은 User Mode와 Privileged mode로 나뉜다.
+- Privileged Mode는 내부적으로 6개의 모드로 나뉜다.
+  1. Privileged Mode는 서로 간에 Mode 변경이 자유롭지만, User Mode -> Privileged Mode는 불가능하다
+  2. Privileged Mode는 IRQ/FIQ 등의 인터럽트 사용 가능 유무를 포함해, 다양한 시스템 기능을 직접 설정할 수 있다.
+- ARM의 Default 모드는 SVC(Supervisor)모드다. Boot-up 시에 ARM의 모든 기능을 사용하기 위해서는 SVC모드로 진입해야하기 때문이다.
+
+#### 2.3 ARM 레지스터와 Context
+- ![image](https://github.com/user-attachments/assets/0dd128b5-4e66-4db3-96fa-4511cd342a50)
 
 
 ###### 출처: https://ww1.microchip.com/downloads/en/DeviceDoc/DDI0029G_7TDMI_R3_trm.pdf
