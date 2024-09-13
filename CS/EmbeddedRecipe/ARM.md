@@ -23,6 +23,15 @@
 
 #### 2.3 ARM 레지스터와 Context
 - ![image](https://github.com/user-attachments/assets/0dd128b5-4e66-4db3-96fa-4511cd342a50)
+- ARM Core는 총 37개의 레지스터를 가지고 있음
+- 동작 Mode가 바뀌면 사용하는 레지스터 Set도 바뀐다
+- USR와 SYS는 같은 레지스터를 사용한다. R0 ~ R14까지 15개를 사용한다.
+- FIQ는 자신만의 R8 ~ R14 레지스터를 갖고 있다. SPSR까지 합쳐 8개를 사용한다.
+- 다른 Mode들과 달리 FIQ만 레지스터를 많이 갖고 있는 이유는 빠른 연산을 위해서다.
+- FIQ는 빠르게 인터럽트를 처리해줘야 하기 때문에 레지스터를 많이 가지고 있을수록 빠른 처리가 가능하다
+- SVC, ABT, IRQ, UND는 자신만의 R13(SP), R14(LR), SPSR을 사용해 총 12개의 레지스터를 사용한다.
+
+
 
 
 ###### 출처: https://ww1.microchip.com/downloads/en/DeviceDoc/DDI0029G_7TDMI_R3_trm.pdf
