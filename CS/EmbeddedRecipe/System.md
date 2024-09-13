@@ -110,7 +110,7 @@ NOR 게이트 1의 출력이 1이고, NOR 게이트 2의 출력이 0이 되어, 
   1. WR Pin에 High 신호를 주고, RD Pin에 Low 신호를 준다
   2. A[7:0] = 0xAB = 10101011, D[7:0] = 0x7C = 01111100 신호를 주면 된다.
 
-- RAM을 읽는 방법: WR Pindp Low, RD Pin에 High 신호를 준 뒤 주소 지정해주면 D[7:0]에 Data가 나온다.
+- RAM을 읽는 방법: WR Pin에 Low, RD Pin에 High 신호를 준 뒤 주소 지정(RAM을 읽기 모드로 설정하는 단계)해주면 D[7:0]에 Data가 나온다.
 
 
 ##### 간략한 16진수 변환법
@@ -145,8 +145,29 @@ NOR 게이트 1의 출력이 1이고, NOR 게이트 2의 출력이 0이 되어, 
      결과: 11000101(2진수)
 
 
+### 6.CPU
 
-     
+#### 6.1 CPU 구조 및 동작 원리
+
+- ![image](https://github.com/user-attachments/assets/91332cae-3890-4941-8c5e-7231bf831200)
+- CPU는 논리회로의 집합체이며, 약속된 신호를 주면 약속된 동작을 수행함
+- CPU 내부는 CU(Control Unit), Decoder, ALU(Arithmetic & Logical Unit), Register Set 등으로 구성됨
+- CPU의 동작원리: Decoder에서 명령어를 읽고 해석한 뒤 CU로 각종 제어 신호를 발생시켜 ALU 등에게 동작 명령
+- 동작하는 과정에서 임시로 빠르게 결과를 저장하고 참조하는 용도로 레지스터 활용
+- CPU 이외에 여러 가지 기능(Flash, UART, I/O) 등이 한 개의 Chip에 내장된 것을 MCU(Micro Controller Unit)이라고 부름
+
+#### 6.2 Pipeline
+
+- ARM Core CPU의 동작구조를 단순하게 표현하면 Fetch -> Decode -> Execute의 Cycle로 되어있음
+
+
+
+
+
+
+
+
+
 
      
 
