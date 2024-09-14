@@ -71,6 +71,14 @@
      - 모든 레지스터는 사용하기 전에 기존에 들어있는 값을 Stack에 저장한 뒤 사용해야하고, 서브루틴이 끝난 후 복귀할 때는 다시 Stack에서 꺼내어 복구해줘야한다.
 
 ### 2.4 ARM Modes와 Exception
+- Exception이란, Interrupt를 포함한 큰 사건(외부 요청, 내부 오류 등)을 의미한다.
+- Exception이 발생하면 진행하던 동작을 멈추고, Exception을 처리하는데 특화된 Privileged Mode로 진입한 뒤 Exception Handler의 주소로 Jump해 처리 및 복원을 수행한다
+- Exception이 발생했을 때 Jump하는 Adrress들을 모아 Exception Vector Table이라고 한다.
+
+- ![image](https://github.com/user-attachments/assets/e9895176-ae9d-4e17-85da-42a3759cd922)
+- 
+
+
 
 
 
