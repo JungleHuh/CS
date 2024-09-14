@@ -30,6 +30,24 @@
 - 다른 Mode들과 달리 FIQ만 레지스터를 많이 갖고 있는 이유는 빠른 연산을 위해서다.
 - FIQ는 빠르게 인터럽트를 처리해줘야 하기 때문에 레지스터를 많이 가지고 있을수록 빠른 처리가 가능하다
 - SVC, ABT, IRQ, UND는 자신만의 R13(SP), R14(LR), SPSR을 사용해 총 12개의 레지스터를 사용한다.
+- 마지막으로 PC와 CPSR 레지스터를 합치면 총 37개
+- 모든 Mode가 공유하는 레자스터는 PC, SPSR, R0 ~ R7이다.
+- CPSR(Current Program Status Register): 현재 상태 저장하는 레지스터, SPSR(Saved PSR): 이전 시스템 상태를 백업하는 레지스터
+- Thumb Mode를 사용한다면 R8 ~ R12는 사용하지 않는다
+- OS에서 나오는 'Context Switching'의 Context가 Register Set을 의미한다.
+  - 프로세스 A를 실행할 때 R0 ~ R14, CPSP값을 Stack과 함께 녠ㄲ에 백업한 뒤에 프로세스B의 R0 ~ R14, CPSR값을 Stack에서 꺼내어 덮어 
+  - 프로세스B에서 뭘 하려고 했었는지(미래), 무엇을 하고 있었는지(현재), 무엇을 했는지(과거) 파악 가능
+  - 특정 순간의 Context를 저장/복원하면 그 특정 순간으로 돌아갈 수 있다는게 Context Switching이다.
+  - 이 때 각 프로세스 또는 함수가 어떤 레스터를 사용해서 작업할지는 컴파일 단게에서 결정된다.(그래야 어떤 레지스터에 스택을 저장할지 알 수 있고, 그것에 맞게 기계에를 만들 수 있다)
+  -  컴파일러는 프로세스나 함수가 실행될 때, 어떤 값을 어느 레지스터에 저장할지 미리 결정합니다. 예를 들어, 특정 변수가 R0에 저장된다면, 나중에 이 변수를 사용할 때 항상 R0에서 가져오도록 코드가 생성
+
+
+### AAPCS (ARM Architecture Procedure Call Standard)
+![image](https://github.com/user-attachments/assets/bdd32193-a77e-48d9-a331-ec53cb2c43ce)
+- ARM은 각 레지스터의 사용법에 대한 표준을 만들었고, 이 표준을 버전에 따라 PCS, APCS, AAPCS라 부른다
+- ARM 컴파일러는 이 표준에 맞춰 기계어를 만든다.
+- 1. R0 ~ R3(a1 ~ a4)(Argument, Result, Scratch)
+     - 
 
 
 
