@@ -24,3 +24,7 @@
 ### E. C, C++
 
 - [ ] Q1. ?
+
+### F. SW/HW Testing(CSTS, ISTQB)
+
+- [ ] Q1. ?
