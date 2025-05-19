@@ -15,16 +15,20 @@
 
 ### C. 컴퓨터 구조
 
-- [ ] [Q1. ARM.](./C-1.md)
+- [ ] [Q1. ARM](./C-1.md)
+- [ ] [Q2. Register](./C-2.md)
 
 ### D. AI, 프로젝트, Python
 
-- [ ] Q1. Base64 인코딩이란?
+- [ ] [Q1. RAG](./D-1.md)
 
-### E. C, C++
+### E. C, C++, Embedded
 
-- [ ] Q1. ?
+- [ ] [Q1. SSAFY EMBEDDED](./E-1.md)
 
 ### F. SW/HW Testing(CSTS, ISTQB)
 
-- [ ] Q1. ?
+- [ ] [Q1. CSTS의 활용](./F-1.md)
+
+### G. Android
+- [ ] [Q1. 안드로이드 15버전에서의 주요 변화](./G-1.md)
